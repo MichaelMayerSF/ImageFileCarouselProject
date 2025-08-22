@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <masterLabel>Image File Carousel</masterLabel>
+    <description>Display images (png, jpg, jpeg) in related list of this record as a carousel of images.</description>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="height" type="Integer" label="Height" description="Height of the image carousel" min="0" max="1000" default="500" required="true"/>
+            <property name="autoSlideInterval" label="Auto Slide Interval (in milliseconds)" description="No autoslide from 0-499ms, 500 to 60000 represent 0.5s to 60s to change slide automatically" type="Integer" min="0" max="60000" default="0" required="true"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

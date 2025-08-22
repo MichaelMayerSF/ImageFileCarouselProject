@@ -1,0 +1,24 @@
+<template>
+    <lightning-card>
+
+        <div class="ifc-slideshow-container slds-is-relative">
+            <template for:each={cards} for:item="card" for:index="index">
+                <div class="ifc-slides ifc-fade slds-hide" key={card.key1}>
+                    <div class="ifc-numbertext slds-is-absolute">{card.counter}</div>
+                    <img class="ifc-img slds-align_absolute-center" style={getHeight} src={card.url} />
+                    <!-- <div class="ifc-text">Caption Text</div> -->
+                </div>
+            </template>
+            <a class="ifc-prev slds-is-absolute" onclick={prevSlide}>❮</a>
+            <a class="ifc-next slds-is-absolute" onclick={nextSlide}>❯</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <template for:each={cards} for:item="card" for:index="index">
+                <span class="ifc-dot slds-show_inline-block" key={card.key2} data-ifc-slide-index={index} onclick={currentSlide}></span>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>
